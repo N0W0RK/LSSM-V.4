@@ -26,18 +26,7 @@ To work on LSSM locally follow these steps:
    ```bash
    yarn install
    ```
-3. Modify the variable `urls.server` in `src/config.ts` to point to your local machine:
-   ```ts
-    export default {
-        //...
-        urls: {
-            server: 'https://localhost:8080/',
-            //...
-        },
-        //...
-    } as Config;
-   ```
-4. Run the dev build:
+3. Run the dev build:
    ```bash
    yarn dev
    ```
@@ -54,13 +43,15 @@ To work on LSSM locally follow these steps:
        ```
     :::
 
-5. Start the development server, which will serve the `dist` folder on `https://localhost:8080/`:
+5. Start the development server, which will serve the `dist` folder on `https://localhost:36551/`:
    ```bash
    yarn dev:serve
    ```
 
-   :::tip DX notes
-   If you have used another address in step 3, you will need to adjust the host/post in the `dev:serve` script in `package.json`.
+   :::tip Changeing the address
+   To change the port, LSSM is served at, modify the `LSSM_PORT` variable in either `build/build.ps1` or `build/build.bash` depending on your environment.
+
+   To change the address, replace `localhost` with the address of your choosing in `src/config.ts` in the section `urls`.
    :::
 
 6. Install the userscript in your browser:
